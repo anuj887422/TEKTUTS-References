@@ -1,0 +1,32 @@
+1. Download git bash from following link
+   https://git-scm.com/downloads
+2. While downloading choose git bash option too.
+3. In project folder type
+    git init
+4. type git status to check status
+5. add each file file git add 
+6. create .gitignore file in current folder and add files line by line that you want to ignore.
+7. then git add .gitignore
+8. git commit -m "Initial Commit"
+9. Now project is set up locally inorder to connect and push to github you need ssh-key
+10. open git bash and type following commands.
+11. type ls -al ~/.ssh to check if id_rsa and id_rsa.pub exist.
+12. if it exist that means you have ssh key.
+13. otherwise type 
+    ssh-keygen -t rsa -b 4096 -C "Email_address"
+    and press enter
+    and then type yes if asked and then it will print successful message.
+14. type ls -al ~/.ssh to check
+15. type eval "$(ssh-agent -s)"
+16. ssh-add ~/.ssh/id_rsa
+17. goto github settings and goto ssh and gpg key
+18. click on new ssh key and give any name you want
+19. now goto git bash and run following command from anywhere.
+    clip < ~/.ssh/id_rsa.pub
+20. now switch to github page and press ctrl+v to paste on it and
+    then click add new key.
+21. now you can connect to github.
+22. goto github home page and creat new repository without clicking readme.md
+23. goto your project folder and run following commands from terminal.(which you can find from your repository on github).
+    git remote add origin 'repository_address'
+    git push -u origin master
